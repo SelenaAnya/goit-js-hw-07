@@ -1,47 +1,52 @@
-const categories = document.querySelectorAll('#categories .item');
+// Вибираємо всі елементи з класом "item"
+const items = document.querySelectorAll('.item');
 
-const categoriesList = document.querySelector('#categories');
-categoriesList.style.fontFamily = 'Arial, sans-serif';
-categoriesList.style.margin = '20px auto';
-categoriesList.style.maxWidth = '600px';
-categoriesList.style.padding = '0';
-categoriesList.style.listStyleType = 'none';
+// Додаємо стилі до кожного елемента
+items.forEach(item => {
+  // Стилі для контейнера кожного пункту
+  item.style.border = 'none';
+  item.style.borderRadius = '4px';
+  item.style.padding = '16px';
+  item.style.marginBottom = '24px';
+  item.style.width = '293px';
+  item.style.backgroundColor = '#F6F6FE';
+  item.style.listStyle = 'none';
 
-
-categories.forEach(category => {
- 
-  category.style.marginBottom = '20px';
-  category.style.backgroundColor = '#f5f5f5';
-  category.style.border = '1px solid #ddd';
-  category.style.borderRadius = '8px';
-  category.style.padding = '15px';
-  category.style.transition = 'box-shadow 0.3s ease';
-
-    category.addEventListener('mouseover', () => {
-    category.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-  });
-
-  category.addEventListener('mouseout', () => {
-    category.style.boxShadow = 'none';
-  });
-
-  const title = category.querySelector('h2');
+  // Стилі для заголовків
+  const title = item.querySelector('h2');
   title.style.fontSize = '24px';
-  title.style.color = '#333';
-  title.style.marginBottom = '10px';
+  title.style.textAlign = 'left';
+  title.style.color = 'rgba(46, 47, 66, 1)';
+  title.style.margin = '0';
+  title.style.fontStyle = 'Montserrat';
+  title.style.fontWeight = '600';
+  title.style.letterSpacing = '4%';
 
-  const itemsList = category.querySelector('ul');
-  itemsList.style.margin = '0';
-  itemsList.style.paddingLeft = '20px';
-  itemsList.style.listStyleType = 'circle';
 
-  const items = itemsList.querySelectorAll('li');
-  items.forEach(item => {
-    item.style.fontSize = '18px';
-    item.style.color = '#555';
-    item.style.lineHeight = '1.6';
+  // Стилі для списків
+  const list = item.querySelector('ul');
+  list.style.padding = '0';
+  
+  // Стилі для пунктів списків
+  const listItems = list.querySelectorAll('li');
+  listItems.forEach(li => {
+    li.style.margin = '5px 0';
+    li.style.textAlign = 'left';
+    li.style.color = '#555';
+    li.style.borderRadius = '4px';
+    li.style.border = '1px solid rgba(128, 128, 128, 1)';
+    li.style.listStyle = 'none';
+    li.style.paddingLeft = '16px';
+    li.style.fontSize = '16px';
+    li.style.letterSpacing = '0.03em';
+    li.style.lineHeight = '1.5';
+    li.style.alignItems = 'center';
+    li.style.marginBottom = '8px';
+    li.style.paddingBottom = '8px';
+    li.style.paddingTop = '8px';
   });
 });
+
 
 
 const categories = document.querySelectorAll('#categories .item');
