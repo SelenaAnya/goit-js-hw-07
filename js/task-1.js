@@ -3,6 +3,7 @@ const items = document.querySelectorAll('.item');
 
 // Додаємо стилі до кожного елемента
 items.forEach(item => {
+  
   // Стилі для контейнера кожного пункту
   item.style.border = 'none';
   item.style.borderRadius = '4px';
