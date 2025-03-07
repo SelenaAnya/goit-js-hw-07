@@ -24,3 +24,45 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+// Знаходимо список ul.gallery
+const gallery = document.querySelector('.gallery');
+
+// Генеруємо галерею та додаємо до списку
+images.forEach(({ url, alt }) => {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
+
+  img.src = url;
+  img.alt = alt;
+
+  // Додаємо стилі до <img> через JS
+  img.style.width = '360px';
+  img.style.height = '300px';
+  img.style.margin = '0 auto';
+  img.style.display = 'block';
+
+
+  li.appendChild(img);
+
+  // Додаємо стилі до <li>
+  li.style.listStyle = 'none';
+  li.style.display = 'flex';
+  li.style.justifyContent = 'center';
+  li.style.alignItems = 'center';
+  li.style.marginBottom = '24px';
+
+  gallery.appendChild(li);
+});
+
+// Стилізуємо ul.gallery
+gallery.style.display = 'flex';
+gallery.style.flexWrap = 'wrap';
+gallery.style.gap = '24px';
+gallery.style.justifyContent = 'center';
+gallery.style.margin = '0';
+gallery.style.padding = '0';
+gallery.style.listStyle = 'none';
+gallery.style.marginTop = '100px';
+gallery.style.marginBottom = '100px';
+
