@@ -13,7 +13,7 @@ const changeColorButton = document.querySelector('.change-color');
 changeColorButton.addEventListener('click', () => {
   const newColor = getRandomHexColor(); // Генеруємо випадковий колір
   body.style.backgroundColor = newColor; // Змінюємо фон body
-  colorSpan.textContent = newColor; // Показуємо колір у span
+  colorSpan.textContent = newColor; // колір у span
 });
 
 // Стилізація через JS
@@ -36,11 +36,13 @@ widget.style.fontFamily = 'Arial, sans-serif';
 
 // Стилізуємо текст
 const paragraph = widget.querySelector('p');
-paragraph.style.marginBottom = '16px';aragraph.style.fontSize = '16px';
+paragraph.style.marginBottom = '16px';
+paragraph.style.fontSize = '16px';
 paragraph.style.color = '#2E2F42';
 paragraph.style.textAlign = 'center';
 
 // Стилізуємо кнопку
+changeColorButton.style.width = '148px';
 changeColorButton.style.padding = '8px 16px';
 changeColorButton.style.border = 'none';
 changeColorButton.style.borderRadius = '8px';
@@ -51,5 +53,5 @@ changeColorButton.style.cursor = 'pointer';
 changeColorButton.style.transition = 'background-color 0.3s';
 
 changeColorButton.addEventListener('mouseover', () => {
-  changeColorButton.style.backgroundColor = '#0056b3';
+  changeColorButton.style.backgroundColor = '#6C8CFF';
 });
