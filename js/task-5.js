@@ -16,7 +16,6 @@ changeColorButton.addEventListener('click', () => {
   colorSpan.textContent = newColor; // колір у span
 });
 
-// Стилізація через JS
 const widget = document.querySelector('.widget');
 
 // Стилізуємо контейнер

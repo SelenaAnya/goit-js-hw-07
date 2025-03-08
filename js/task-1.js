@@ -1,9 +1,8 @@
-// Вибираємо всі елементи з класом "item"
 const items = document.querySelectorAll('.item');
 
-// Додаємо стилі до кожного елемента
+// Додаємо стилі 
 items.forEach(item => {
-  
+
   // Стилі для контейнера кожного пункту
   item.style.border = 'none';
   item.style.borderRadius = '4px';
@@ -22,7 +21,6 @@ items.forEach(item => {
   title.style.fontStyle = 'Montserrat';
   title.style.fontWeight = '600';
   title.style.letterSpacing = '4%';
-
 
   // Стилі для списків
   const list = item.querySelector('ul');

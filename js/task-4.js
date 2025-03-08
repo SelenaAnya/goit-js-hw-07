@@ -1,11 +1,9 @@
-// Знаходимо форму
 const loginForm = document.querySelector('.login-form');
 
 // Додаємо подію submit
 loginForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+  event.preventDefault(); 
 
-  // Отримуємо значення полів форми
   const { email, password } = loginForm.elements;
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
@@ -16,20 +14,18 @@ loginForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // Створюємо об'єкт з даними
+  // об'єкт з даними
   const formData = {
     email: emailValue,
     password: passwordValue,
   };
 
-  // Виводимо об'єкт у консоль
   console.log(formData);
 
-  // Очищаємо форму
   loginForm.reset();
 });
 
-// Стилізація форми через JS
+// Стилізація форми 
 loginForm.style.padding = '24px';
 loginForm.style.width = '300px';
 loginForm.style.margin = '50px auto';

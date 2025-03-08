@@ -28,7 +28,7 @@ const images = [
 // Знаходимо список ul.gallery
 const gallery = document.querySelector('.gallery');
 
-// Генеруємо галерею та додаємо до списку
+// Галерея та список зображень
 images.forEach(({ url, alt }) => {
   const li = document.createElement('li');
   const img = document.createElement('img');
@@ -36,7 +36,7 @@ images.forEach(({ url, alt }) => {
   img.src = url;
   img.alt = alt;
 
-  // Додаємо стилі до <img> через JS
+  // Додаємо стилі до <img> 
   img.style.width = '360px';
   img.style.height = '300px';
   img.style.margin = '0 auto';

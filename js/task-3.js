@@ -1,17 +1,12 @@
-// Отримуємо елементи інпуту та спану
 const nameInput = document.querySelector('#name-input');
 const nameOutput = document.querySelector('#name-output');
 
-// Додаємо слухач події input до елемента input
 nameInput.addEventListener('input', (event) => {
-  // Очищаємо значення від пробілів на краях
   const trimmedValue = event.target.value.trim();
 
-  // Підставляємо ім'я або "Anonymous", якщо інпут порожній
   nameOutput.textContent = trimmedValue || 'Anonymous';
 });
 
-// Додаємо стилізацію елементів через JavaScript
 // Стилізація інпуту
 nameInput.style.paddingLeft = '16px';
 nameInput.style.paddingTop = '8px';
