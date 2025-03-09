@@ -22,47 +22,53 @@ const images = [
   {
     url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
-  }
+  },
 ];
 
 // Знаходимо список ul.gallery
 const gallery = document.querySelector('.gallery');
 
-// Галерея та список зображень
-images.forEach(({ url, alt }) => {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
+// HTML-рядок для всіх елементів
+const markup = images
+  .map(
+    ({ url, alt }) =>
+      `<li style="
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;">
+          <img src="${url}" alt="${alt}" style="
+            width: 360px;
+            height: 300px;
+            margin: 0 auto;
+            display: block;">
+      </li>`
+  )
+  .join('');
 
-  img.src = url;
-  img.alt = alt;
-
-  // Додаємо стилі до <img> 
-  img.style.width = '360px';
-  img.style.height = '300px';
-  img.style.margin = '0 auto';
-  img.style.display = 'block';
-
-
-  li.appendChild(img);
-
-  // Додаємо стилі до <li>
-  li.style.listStyle = 'none';
-  li.style.display = 'flex';
-  li.style.justifyContent = 'center';
-  li.style.alignItems = 'center';
-  li.style.marginBottom = '24px';
-
-  gallery.appendChild(li);
-});
+gallery.insertAdjacentHTML('beforeend', markup);
 
 // Стилізуємо ul.gallery
-gallery.style.display = 'flex';
-gallery.style.flexWrap = 'wrap';
-gallery.style.gap = '24px';
-gallery.style.justifyContent = 'center';
-gallery.style.margin = '0';
-gallery.style.padding = '0';
-gallery.style.listStyle = 'none';
-gallery.style.marginTop = '100px';
-gallery.style.marginBottom = '100px';
+Object.assign(gallery.style, {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '24px',
+  justifyContent: 'center',
+  margin: '0',
+  padding: '0',
+  listStyle: 'none',
+  marginTop: '100px',
+  marginBottom: '100px',
+  width: '1128px',
+});
 
+// Стилізуємо li
+const itemsInGallery = gallery.querySelectorAll('li');
+itemsInGallery.forEach(item => {
+  item.style.listStyle = 'none';
+  item.style.display = 'flex';
+  item.style.justifyContent = 'center';
+  item.style.alignItems = 'center';
+  item.style.marginBottom = '24px';
+});
